@@ -1,4 +1,4 @@
-package com.diro.petclicnic.model;
+package com.diro.petclcnic.model;
 
 public class Person {
 	private String firstName;

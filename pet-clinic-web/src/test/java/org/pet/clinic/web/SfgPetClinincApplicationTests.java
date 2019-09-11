@@ -1,4 +1,4 @@
-package com.diro.petclicnic;
+package org.pet.clinic.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
