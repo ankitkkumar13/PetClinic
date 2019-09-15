@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.diro</groupId>
 	<artifactId>SfgPetClininc</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<name>SfgPetClininc</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -41,6 +41,7 @@
 	<scm>
 		<developerConnection>scm:git:https://github.com/ankitkkumar13/PetClinic.git</developerConnection>
   <url>checking relaese</url>
+    <tag>SfgPetClininc-0.1.1</tag>
   </scm>
 	<packaging>pom</packaging>
 
