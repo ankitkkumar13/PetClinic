@@ -39,8 +39,8 @@
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>https://github.com/ankitkkumar13/PetClinic.git</developerConnection>
-	  <tag>first release</tag>
+		<developerConnection>scm:git:https://github.com/ankitkkumar13/PetClinic.git</developerConnection>
+  <url>checking relaese</url>
   </scm>
 	<packaging>pom</packaging>
 
