@@ -39,7 +39,7 @@
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git:https://github.com/ankitkkumar13/PetClinic.git</developerConnection>
+		<developerConnection>https://github.com/ankitkkumar13/PetClinic.git</developerConnection>
 	  <tag>first release</tag>
   </scm>
 	<packaging>pom</packaging>
