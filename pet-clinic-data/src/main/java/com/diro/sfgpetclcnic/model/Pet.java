@@ -1,4 +1,4 @@
-package com.diro.petclcnic.model;
+package com.diro.sfgpetclcnic.model;
 
 import java.time.LocalDate;
 

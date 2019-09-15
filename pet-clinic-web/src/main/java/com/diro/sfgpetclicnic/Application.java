@@ -1,4 +1,4 @@
-package com.diro.petclicnic;
+package com.diro.sfgpetclicnic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
