@@ -1,4 +1,4 @@
-package com.diro.sfgpetclcnic.map;
+package com.diro.sfgpetclicnic.map;
 
 import java.util.HashMap;
 import java.util.HashSet;

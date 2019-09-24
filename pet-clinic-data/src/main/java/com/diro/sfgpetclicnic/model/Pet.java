@@ -1,4 +1,4 @@
-package com.diro.sfgpetclcnic.model;
+package com.diro.sfgpetclicnic.model;
 
 import java.time.LocalDate;
 

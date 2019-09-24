@@ -1,12 +1,14 @@
-package com.diro.sfgpetclcnic.map;
+package com.diro.sfgpetclicnic.map;
 
 import java.util.Set;
 
-import com.diro.sfgpetclcnic.model.Owner;
-import com.diro.sfgpetclcnic.model.Vet;
-import com.diro.sfgpetclcnic.services.CrudService;
-import com.diro.sfgpetclcnic.services.VetService;
+import org.springframework.stereotype.Service;
 
+import com.diro.sfgpetclicnic.model.Owner;
+import com.diro.sfgpetclicnic.model.Vet;
+import com.diro.sfgpetclicnic.services.CrudService;
+import com.diro.sfgpetclicnic.services.VetService;
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override

@@ -3,22 +3,19 @@ package com.diro.sfgpetclicnic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.diro.sfgpetclcnic.map.OwnereServiceMap;
-import com.diro.sfgpetclcnic.map.VetServiceMap;
-import com.diro.sfgpetclcnic.model.Owner;
-import com.diro.sfgpetclcnic.model.Vet;
-import com.diro.sfgpetclcnic.services.OwnerService;
-import com.diro.sfgpetclcnic.services.VetService;
+import com.diro.sfgpetclicnic.map.OwnereServiceMap;
+import com.diro.sfgpetclicnic.map.VetServiceMap;
+import com.diro.sfgpetclicnic.model.Owner;
+import com.diro.sfgpetclicnic.model.Vet;
+import com.diro.sfgpetclicnic.services.OwnerService;
+import com.diro.sfgpetclicnic.services.VetService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 	private OwnerService ownerService;
 	private VetService vetService;
 
-	public DataLoader() {
-		this.ownerService = new OwnereServiceMap();
-		this.vetService = new VetServiceMap();
-	}
+	
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -29,8 +26,8 @@ public class DataLoader implements CommandLineRunner {
 		ownerService.save(owner);
 		Owner owner2 = new Owner();
 		owner2.setId(2L);
-		owner.setFirstName("Saurabh");
-		owner.setLastName("mishra");
+		owner2.setFirstName("Saurabh");
+		owner2.setLastName("mishra");
 		ownerService.save(owner2);
 		System.out.println("Loaded owners");
 
@@ -46,6 +43,14 @@ public class DataLoader implements CommandLineRunner {
 		vet1.setLastName("Vishnoi");
 		vetService.save(vet1);
 		System.out.println("Vet loaded");
+	}
+
+
+
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		super();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 }

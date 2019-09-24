@@ -1,10 +1,12 @@
-package com.diro.sfgpetclcnic.map;
+package com.diro.sfgpetclicnic.map;
 
 import java.util.Set;
 
-import com.diro.sfgpetclcnic.model.Pet;
-import com.diro.sfgpetclcnic.services.PetService;
+import org.springframework.stereotype.Service;
 
+import com.diro.sfgpetclicnic.model.Pet;
+import com.diro.sfgpetclicnic.services.PetService;
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override

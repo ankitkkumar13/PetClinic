@@ -1,4 +1,4 @@
-package com.diro.sfgpetclcnic.model;
+package com.diro.sfgpetclicnic.model;
 
 public class PetType {
 private String name;
