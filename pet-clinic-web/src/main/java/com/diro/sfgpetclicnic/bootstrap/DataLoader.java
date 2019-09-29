@@ -3,8 +3,6 @@ package com.diro.sfgpetclicnic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.diro.sfgpetclicnic.map.OwnereServiceMap;
-import com.diro.sfgpetclicnic.map.VetServiceMap;
 import com.diro.sfgpetclicnic.model.Owner;
 import com.diro.sfgpetclicnic.model.Vet;
 import com.diro.sfgpetclicnic.services.OwnerService;

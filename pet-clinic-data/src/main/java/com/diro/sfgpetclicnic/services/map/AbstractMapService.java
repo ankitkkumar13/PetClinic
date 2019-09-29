@@ -1,4 +1,4 @@
-package com.diro.sfgpetclicnic.map;
+package com.diro.sfgpetclicnic.services.map;
 
 import java.util.Collections;
 import java.util.HashMap;
