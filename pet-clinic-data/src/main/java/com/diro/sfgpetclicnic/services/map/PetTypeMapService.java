@@ -4,9 +4,11 @@ import com.diro.sfgpetclicnic.model.Pet;
 import com.diro.sfgpetclicnic.model.PetType;
 import com.diro.sfgpetclicnic.services.PetService;
 import com.diro.sfgpetclicnic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {

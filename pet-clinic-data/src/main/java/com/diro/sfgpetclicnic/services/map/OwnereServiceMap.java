@@ -2,6 +2,9 @@ package com.diro.sfgpetclicnic.services.map;
 
 import java.util.Set;
 
+import com.diro.sfgpetclicnic.model.Pet;
+import com.diro.sfgpetclicnic.services.PetService;
+import com.diro.sfgpetclicnic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import com.diro.sfgpetclicnic.model.Owner;
@@ -9,6 +12,13 @@ import com.diro.sfgpetclicnic.services.OwnerService;
 
 @Service
 public class OwnereServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+	private PetTypeService petTypeService;
+	private PetService petService;
+
+	public OwnereServiceMap(PetTypeService petTypeService, PetService petService) {
+		this.petTypeService = petTypeService;
+		this.petService = petService;
+	}
 
 	@Override
 	public Set<Owner> findAll() {
@@ -17,12 +27,33 @@ public class OwnereServiceMap extends AbstractMapService<Owner, Long> implements
 
 	@Override
 	public Owner findById(Long id) {
+
 		return super.findByID(id);
 	}
 
 	@Override
 	public Owner save(Owner object) {
-		return super.save( object);
+		if (object != null) {
+			if (object.getPetSet() != null) {
+				object.getPetSet().forEach(pet -> {
+					if (pet.getPetType() != null) {
+						if (pet.getPetType().getId() != null) {
+							pet.setPetType(petTypeService.save(pet.getPetType()));
+						}
+						if (pet.getId() == null) {
+							Pet savePet = petService.save(pet);
+							pet.setId(savePet.getId());
+						}
+					} else {
+						throw new RuntimeException("Pets is required");
+					}
+				});
+			}
+			return super.save(object);
+		} else {
+			return null;
+		}
+
 	}
 
 	@Override

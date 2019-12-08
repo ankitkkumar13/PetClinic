@@ -2,12 +2,19 @@ package com.diro.sfgpetclicnic.services.map;
 
 import java.util.Set;
 
+import com.diro.sfgpetclicnic.model.Speciality;
+import com.diro.sfgpetclicnic.services.SpecialtiesService;
 import org.springframework.stereotype.Service;
 
 import com.diro.sfgpetclicnic.model.Vet;
 import com.diro.sfgpetclicnic.services.VetService;
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+	private SpecialtiesService specialtiesService;
+
+	public VetServiceMap(SpecialtiesService specialtiesService) {
+		this.specialtiesService = specialtiesService;
+	}
 
 	@Override
 	public Set<Vet> findAll() {
@@ -21,7 +28,18 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
 	@Override
 	public Vet save(Vet object) {
-		return super.save( object);
+		if (object != null) {
+			if (object.getSpecialitySet() != null) {
+				object.getSpecialitySet().forEach(s -> {
+					if (s.getId() == null) {
+						Speciality saveSpeciality = specialtiesService.save(s);
+						saveSpeciality.setId(saveSpeciality.getId());
+					}
+				});
+			}
+			return super.save(object);
+		} else return null;
+
 	}
 
 	@Override
