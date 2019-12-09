@@ -1,8 +1,6 @@
 package com.diro.sfgpetclicnic.controller;
 
 import com.diro.sfgpetclicnic.services.OwnerService;
-import com.diro.sfgpetclicnic.services.VetService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
