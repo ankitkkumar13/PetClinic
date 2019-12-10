@@ -1,10 +1,15 @@
 package com.diro.sfgpetclicnic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "owners")
 public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
@@ -16,35 +21,12 @@ public class Owner extends Person {
     @Column(name = "telephone")
     private String telephone;
 
-    public Set<Pet> getPetSet() {
-        return petSet;
-    }
-
-    public void setPetSet(Set<Pet> petSet) {
+    @Builder
+    public Owner(Long id, String firstName, String lastName, Set<Pet> petSet, String address, String city, String telephone) {
+        super(id, firstName, lastName);
         this.petSet = petSet;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 }
