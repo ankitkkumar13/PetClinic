@@ -5,17 +5,19 @@ import java.util.Set;
 import com.diro.sfgpetclicnic.model.Pet;
 import com.diro.sfgpetclicnic.services.PetService;
 import com.diro.sfgpetclicnic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.diro.sfgpetclicnic.model.Owner;
 import com.diro.sfgpetclicnic.services.OwnerService;
 
 @Service
-public class OwnereServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+@Profile({"default", "map"})
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 	private PetTypeService petTypeService;
 	private PetService petService;
 
-	public OwnereServiceMap(PetTypeService petTypeService, PetService petService) {
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
 		this.petTypeService = petTypeService;
 		this.petService = petService;
 	}

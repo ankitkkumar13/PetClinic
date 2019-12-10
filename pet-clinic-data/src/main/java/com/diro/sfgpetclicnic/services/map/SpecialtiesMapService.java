@@ -2,12 +2,14 @@ package com.diro.sfgpetclicnic.services.map;
 
 import com.diro.sfgpetclicnic.model.Speciality;
 import com.diro.sfgpetclicnic.services.SpecialtiesService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtiesServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
+@Profile({"default", "map"})
+public class SpecialtiesMapService extends AbstractMapService<Speciality, Long> implements SpecialtiesService {
 
     @Override
     public Set<Speciality> findAll() {

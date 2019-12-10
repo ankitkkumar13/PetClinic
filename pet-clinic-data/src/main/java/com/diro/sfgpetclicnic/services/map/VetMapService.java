@@ -4,15 +4,17 @@ import java.util.Set;
 
 import com.diro.sfgpetclicnic.model.Speciality;
 import com.diro.sfgpetclicnic.services.SpecialtiesService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.diro.sfgpetclicnic.model.Vet;
 import com.diro.sfgpetclicnic.services.VetService;
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+@Profile({"default", "map"})
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 	private SpecialtiesService specialtiesService;
 
-	public VetServiceMap(SpecialtiesService specialtiesService) {
+    public VetMapService(SpecialtiesService specialtiesService) {
 		this.specialtiesService = specialtiesService;
 	}
 

@@ -4,6 +4,7 @@ import com.diro.sfgpetclicnic.model.*;
 import com.diro.sfgpetclicnic.services.PetTypeService;
 import com.diro.sfgpetclicnic.services.SpecialtiesService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import com.diro.sfgpetclicnic.services.OwnerService;
@@ -87,7 +88,7 @@ public class DataLoader implements CommandLineRunner {
 	}
 
 
-	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtiesService specialtiesService) {
+	public DataLoader(VetService vetService, OwnerService ownerService, PetTypeService petTypeService, SpecialtiesService specialtiesService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
